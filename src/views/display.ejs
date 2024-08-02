@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confess</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+<body class="bg-slate-950 text-white flex items-center justify-center flex-col">
+    <% 
+    const userMessages = messages.filter(message => message.uid === person);
+    %>
+
+    <div class="my-4 h-12 w-full flex items-center justify-around text-4xl">
+        <div><%= userMessages[0].user %>'s Board</div>
+        <div>
+           <a href="/" class="bg-blue-500 h-10 w-24 rounded-xl flex items-center text-xl justify-center">Home</a>
+        </div>
+    </div>
+
+    <div class="bg-purple-200 w-[80vw] h-[80vh] flex items-center justify-center flex-col rounded-xl px-5">
+        <div class="h-full flex flex-col gap-24 justify-center text-black bg-purple-300 w-[90%] my-4 p-1 rounded-xl">
+            <div class="flex w-full flex-row items-center justify-between">
+                <div class="text-3xl mx-5">
+                    <strong><%= userMessages[0].desc %> : </strong>
+                </div>
+                <div class="flex flex-col h-full gap-4">
+                    <button class="bg-red-400 h-8 w-24 self-end rounded-xl">
+                        <a href="/messages/<%= userMessages[0].text %>">Like</a>
+                    </button>
+                    <span class="text-gray-600">(@ <%= userMessages[0].added.toDateString() %>)</span>
+                </div>
+            </div>
+            <div class="self-start text-black flex flex-col w-full h-40 p-5 border rounded-md text-xl overflow-y-auto">
+                <%= userMessages[0].text %>
+            </div>
+        </div>
+    </div>
+</body>
+
+   
+ 
+</html>

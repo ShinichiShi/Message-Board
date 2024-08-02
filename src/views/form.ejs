@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <title>New message</title>
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+<body class="bg-slate-950 text-white flex items-center justify-center flex-col">
+    <div class="my-4 h-12 w-full flex items-center justify-around text-4xl">
+        
+       <div>Add a new Message</div> 
+        <div>
+            <button class="bg-blue-500 h-10 w-24 rounded-xl text-base self-end">
+                <a href="/">Home</a>
+            </button>
+        </div>
+    </div>
+    
+    <form method='POST' action="/newMessages" class="bg-purple-200 w-[80vw] h-[80vh] flex items-center justify-around flex-col gap-5 rounded-xl px-5">
+
+        <div class="self-start text-black flex flex-col my-5 w-full gap-5">
+            <label for="messageUser" class="text-2xl">Your name:</label>
+            <input type="text" id="messageUser" name ='messageUser' placeholder="Indumati" class="p-5 rounded-xl h-10 w-full" required>
+        </div>
+
+       <div class="self-start text-black flex flex-col my-5 w-full gap-5">
+            <label for="messageDesc" class="text-2xl">Description:</label>
+            <input type="text" id="messageDesc" name ='messageDesc' placeholder="Desc..." class="p-5 h-10 w-full rounded-xl" required>
+        </div>
+
+        <div class="self-start text-black flex flex-col my-5 w-full gap-5">
+            <label for="messageText" class="text-2xl">Message:</label>
+            <textarea class="w-full h-40 p-5 border rounded-md placeholder:text-xl" name="messageText" id="messageText" placeholder="Confess..." required></textarea>
+        </div>
+
+        <div>
+            <button type="submit" class="bg-blue-500 h-10 w-24 rounded-xl text-base self-end">Submit</button>
+        </div>
+        
+    </form>
+</body>
+</html>
